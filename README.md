@@ -40,7 +40,7 @@ At each step, the algorithm:
 
 This produces exact sample paths of the stochastic reaction network under the model assumptions.
 
-![Example SSA trajectories](SSA_sim.png)
+![Example SSA trajectories](Graphs/SSA_sim.png)
 
 ## Monte Carlo Estimation
 
@@ -74,7 +74,7 @@ With:
 N = 100,000
 ```
 
-simulations, crude Monte Carlo observed the event only **2 times**, producing:
+simulations, crude Monte Carlo observed the event only **2 times**, producing approximately:
 
 ```text
 Estimate ≈ 2.0e-5
@@ -138,7 +138,7 @@ fewer simulation steps
 
 This can substantially reduce the number of simulation steps required when the leap condition is appropriate.
 
-![Explicit tau-leaping simulation](TL_sim.png)
+![Explicit tau-leaping simulation](Graphs/TL_sim.png)
 
 ## Implicit Tau-Leaping
 
@@ -148,7 +148,7 @@ The intermediate state is defined implicitly through a nonlinear system.
 
 The implementation solves this system numerically while enforcing non-negativity constraints to avoid non-physical intermediate states.
 
-![Implicit tau-leaping simulation](ITL_sim.png)
+![Implicit tau-leaping simulation](Graphs/ITL_sim.png)
 
 ## Chemical Langevin Equation
 
@@ -161,7 +161,7 @@ The CLE replaces the jump process with a stochastic differential equation that c
 
 The resulting SDE is discretized using the **Euler-Maruyama method**.
 
-![Euler-Maruyama simulation](EM_sim.png)
+![Euler-Maruyama simulation](Graphs/EM_sim.png)
 
 ## Experimental Pipeline
 
@@ -234,20 +234,21 @@ This makes otherwise extremely rare events much more frequently observable.
 
 ```text
 Stochastic-Simulation/
-├── CLE_MC_vs_N.png
-├── EM_sim.png
-├── ETL_MC_vs_N.png
-├── ITL_MC_vs_N.png
-├── ITL_sim.png
+├── Graphs/
+│   ├── CLE_MC_vs_N.png
+│   ├── EM_sim.png
+│   ├── ETL_MC_vs_N.png
+│   ├── ITL_MC_vs_N.png
+│   ├── ITL_sim.png
+│   ├── SSA_MC_N.png
+│   ├── SSA_MC_large_N.png
+│   ├── SSA_sim.png
+│   ├── SSA_sim_2.png
+│   ├── SSA_sim_2_c_tilde.png
+│   └── TL_sim.png
 ├── README.md
 ├── Report.pdf
-├── SRN_code.ipynb
-├── SSA_MC_N.png
-├── SSA_MC_large_N.png
-├── SSA_sim.png
-├── SSA_sim_2.png
-├── SSA_sim_2_c_tilde.png
-└── TL_sim.png
+└── SRN_code.ipynb
 ```
 
 ### `SRN_code.ipynb`
@@ -267,9 +268,9 @@ Contains the implementation and numerical experiments for:
 
 Contains the accompanying derivations, methodology and discussion of the numerical results.
 
-### Figures
+### `Graphs/`
 
-The repository includes simulation trajectories and Monte Carlo convergence plots generated during the experiments.
+Contains simulation trajectories and Monte Carlo convergence plots generated during the experiments.
 
 ## Running the Project
 
